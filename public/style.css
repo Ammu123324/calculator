@@ -1,124 +1,179 @@
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: #ecf0f3;
     font-family: sans-serif;
     outline: none;
-    background-color: black;
 }
 
-.container{
+.container {
     height: 100vh;
+   
     display: flex;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
+    background-image: url(../2.jpg);
+    background-position: center;
+    /* background-size: cover; */
 }
 
-.calculator{
+.calculator {
     background-color: #ecf0f3;
     padding: 15px;
     border-radius: 30px;
-    box-shadow: inset 5px 5px 12px #ffffff, 5px 5px 12px rgba(0,0,0,.16);
+    box-shadow: inset 5px 5px 12px #ffffff, 5px 5px 12px rgba(0, 0, 0, .16);
     display: grid;
-    grid-template-columns: repeat(4,70px);
-
+    margin-bottom: 100px;
+    grid-template-columns: repeat(4, 70px);
 }
 
-input{
+input {
     grid-column: span 4;
-    height:70px;
-    width:260px;
+    height: 70px;
+    width: 260px;
     background-color: #ecf0f3;
-    box-shadow: inset -5px -5px 12px #ffffff, inset 5px 5px 12px rgba(0,0,0,.16);
+    box-shadow: inset -5px -5px 12px #ffffff, inset 5px 5px 12px rgba(0, 0, 0, .16);
     border: none;
     border-radius: 30px;
-    color:rgb(70, 70, 70) ;
+    color: rgb(70, 70, 70);
     font-size: 50px;
     text-align: end;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 30px;
     padding: 20px;
-    
 }
 
-button{
+button {
     height: 48px;
     width: 48px;
     background-color: #ecf0f3;
-    box-shadow: -5px -5px 12px #ffffff,
-    7px 7px 14px rgba(0,0,0,.16);
+    box-shadow: -5px -5px 12px #ffffff, 7px 7px 14px rgba(0, 0, 0, .16);
     border: none;
     border-radius: 50%;
     margin: 8px;
     font-size: 16px;
-
 }
 
-.equal{
+.equal {
     width: 115px;
-    border-radius:40px;
-    background-color: #ecf0f3;
-    box-shadow: -5px -5px 12px #ffffff,
-    7px 7px 14px rgba(0,0,0,.16);
-    
-}
- 
+    border-radius: 40px;
+    background-color: gray;
+    box-shadow: -5px -5px 12px #ffffff, 7px 7px 14px rgba(0, 0, 0, .16);
+} 
 
-/* ========== MEDIA QUERY: Small screens (phones) ========== */
-@media (max-width: 480px) {
+/* ========================================= */
+/* ✅ RESPONSIVE MEDIA QUERIES SECTION */
+/* ========================================= */
+
+/* Tablets (portrait & landscape) */
+@media (max-width: 992px) {
     .calculator {
         grid-template-columns: repeat(4, 60px);
-        padding: 10px;
-        border-radius: 20px;
-    }
-
-    input {
-        width: 220px;
-        height: 60px;
-        font-size: 36px;
-        padding: 15px;
-        margin-top: 30px;
-        margin-bottom: 20px;
-    }
-
-    button {
-        height: 40px;
-        width: 40px;
-        margin: 6px;
-        font-size: 14px;
-    }
-
-    .equal {
-        width: 90px;
-        font-size: 14px;
-    }
-}
-
-/* ========== MEDIA QUERY: Medium screens (tablets) ========== */
-@media (min-width: 481px) and (max-width: 768px) {
-    .calculator {
-        grid-template-columns: repeat(4, 65px);
         padding: 12px;
-        border-radius: 25px;
     }
-
+    .container{
+        background-size: cover;
+    }
+    
     input {
-        width: 240px;
-        height: 65px;
-        font-size: 42px;
+        width: 230px;
+        height: 60px;
+        font-size: 40px;
     }
 
     button {
         height: 45px;
         width: 45px;
         font-size: 15px;
-        margin: 7px;
     }
 
     .equal {
-        width: 105px;
-        font-size: 15px;
+        width: 100px;
     }
-}
+} 
+
+/* Large phones */
+ @media (max-width: 768px) {
+    .calculator {
+        grid-template-columns: repeat(4, 55px);
+        padding: 10px;
+        margin-bottom: 80px;
+    }
+
+    input {
+        width: 210px;
+        height: 55px;
+        font-size: 35px;
+    }
+
+    button {
+        height: 42px;
+        width: 42px;
+        font-size: 14px;
+    }
+
+    .equal {
+        width: 90px;
+    }
+} 
+
+ /* Small phones */
+@media (max-width: 576px) {
+    .container {
+        height: auto;
+        padding: 60px 0;
+    }
+
+    .calculator {
+        grid-template-columns: repeat(4, 50px);
+        padding: 9px;
+        height:23rem;
+       width:14rem;
+        margin-bottom: 75px;
+        margin-top:15px;
+    }
+
+    input {
+        width: 190px;
+        height: 50px;
+        font-size: 30px;
+    }
+
+    button {
+        height: 40px;
+        width: 40px;
+        font-size: 13px;
+        margin: 6px;
+    }
+
+    .equal {
+        width: 85px;
+    }
+} 
+
+/*  Extra small devices (very small phones) */
+ @media (max-width: 400px) {
+    .calculator {
+        grid-template-columns: repeat(4, 50px);
+    }
+
+    input {
+        width: 170px;
+        height: 45px;
+        font-size: 25px;
+    }
+
+    button {
+        height: 38px;
+        width: 38px;
+        font-size: 12px;
+    }
+
+    .equal {
+        width: 80px;
+    }
+}  
